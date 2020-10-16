@@ -1,32 +1,53 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <header>
+      消息
+    </header>
+    <main>
+      <router-view/>
+    </main>
+    <footer>
+      <router-link to="/home">首页</router-link>
+      <router-link to="/list">列表</router-link>
+      <router-link to="/my">我的</router-link>
+    </footer>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  html,
+  body{
+    width: 100%;
+    height: 100%;
+  }
+  #app{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header{
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background: skyblue;
+    color: #fff;
+  }
+  main{
+    flex: 1;
+    overflow: auto;
+  }
+  footer{
+    height: 45px;
+    line-height: 45px;
+    background: skyblue;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+  }
 </style>
